@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: ktlproject 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ktlproject
+  template:
+    metadata:
+      labels:
+        app: ktlproject 
+    spec:
+      containers:
+        - name: ktlproject 
+          image: acrktlreg.azurecr.io/ktlproject
+          ports:
+          - containerPort: 8000
